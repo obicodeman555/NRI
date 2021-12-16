@@ -1,0 +1,9 @@
+@use "./styles/sass/base/reset";
+@use "./styles/sass/abstracts/helpers";
+@use "./styles/index" as *;
+
+.app {
+  font-size: 2rem;
+  height: 100vh;
+  @include grid-display(480px, 1fr, 240px);
+}

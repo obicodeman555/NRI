@@ -1,0 +1,24 @@
+@use "./animations";
+$staggeredDelay: 100ms;
+
+// @media screen and (min-width: 768px) {
+//   .grid-tall {
+//     grid-row: span;
+//   }
+
+//   .grid-wide {
+//     grid-column: span 2 / auto;
+//   }
+// }
+
+.grid-animated {
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+
+  //animated delay on page reload
+  @for $i from 1 through 12 {
+    .card:nth-child(n + #{$i}) {
+      animation-delay: calc($i * $staggeredDelay);
+    }
+  }
+}
